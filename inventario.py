@@ -1,31 +1,46 @@
-#                                                           Inventario y eso.
+###                                                                                              Inventario y eso.
 
-# Solicitar nombre del producto
-nombre = input("Ingrese el nombre del producto: ")
+# Listas para guardar la información de los productos
+nombres = []
+precios = []
+cantidades = []
 
-# Solicitar y validar el precio
-while True:
-    try:
-        precio = float(input("Ingrese el precio del producto: "))
-        break
-    except ValueError:
-        print("Error: Debe ingresar un número válido para el precio.")
+# Preguntar cuántos productos se van a registrar
+num_productos = int(input("¿Cuántos productos desea registrar? "))
 
-# Solicitar y validar la cantidad
-while True:
-    try:
-        cantidad = int(input("Ingrese la cantidad del producto: "))
-        break
-    except ValueError:
-        print("Error: Debe ingresar un número entero para la cantidad.")
+for i in range(num_productos):
 
-# Calcular el costo total
-costo_total = precio * cantidad
+    print("\nProducto", i + 1)
 
-# Mostrar resultados en consola
-print("\n----- RESUMEN DEL PRODUCTO -----")
-print("Producto:", nombre)
-print("Precio unitario:", precio)
-print("Cantidad:", cantidad)
-print("Costo total:", costo_total)
+    # Nombre del producto
+    nombre = input("Ingrese el nombre del producto: ")
+    nombres.append(nombre)
 
+    # Precio del producto 
+    while True:
+        try:
+            precio = float(input("Ingrese el precio: "))
+            precios.append(precio)
+            break
+        except ValueError:
+            print("Error: ingrese un número válido.")
+
+    # Cantidad del producto
+    while True:
+        try:
+            cantidad = int(input("Ingrese la cantidad: "))
+            cantidades.append(cantidad)
+            break
+        except ValueError:
+            print("Error: ingrese un número entero.")
+
+# Mostrar inventario
+print("\n----- INVENTARIO -----")
+
+for i in range(num_productos):
+
+    costo_total = precios[i] * cantidades[i]
+
+    print(
+        f"Producto: {nombres[i]} | Precio: {precios[i]} | Cantidad: {cantidades[i]} | Total: {costo_total}"
+    )
