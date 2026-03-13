@@ -6,9 +6,9 @@ precios = []
 cantidades = []
 
 # Preguntar cuántos productos se van a registrar
-num_productos = int(input("¿Cuántos productos desea registrar? "))
+numero_productos = int(input("¿Cuántos productos desea registrar? "))
 
-for i in range(num_productos):
+for i in range(numero_productos):
 
     print("\nProducto", i + 1)
 
@@ -23,7 +23,7 @@ for i in range(num_productos):
             precios.append(precio)
             break
         except ValueError:
-            print("Error: ingrese un número válido.")
+            print("Ingrese un número válido porfi.")
 
     # Cantidad del producto
     while True:
@@ -32,12 +32,12 @@ for i in range(num_productos):
             cantidades.append(cantidad)
             break
         except ValueError:
-            print("Error: ingrese un número entero.")
+            print("Ingrese un número entero porfi.")
 
 # Mostrar inventario
-print("\n----- INVENTARIO -----")
+print("--Inventario--")
 
-for i in range(num_productos):
+for i in range(numero_productos):
 
     costo_total = precios[i] * cantidades[i]
 
