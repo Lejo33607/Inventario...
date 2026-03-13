@@ -10,7 +10,7 @@ numero_productos = int(input("¿Cuántos productos desea registrar? "))
 
 for i in range(numero_productos):
 
-    print("\nProducto", i + 1)
+    print("Producto", i + 1)
 
     # Nombre del producto
     nombre = input("Ingrese el nombre del producto: ")
